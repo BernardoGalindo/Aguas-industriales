@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamiento de Aguas industriales CTS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Tratamiento de Aguas Industriales CTS</h1>
+            <p class="text-lg text-gray-600">Análisis de Viabilidad y Comparativa de Modelos de Supervisión</p>
+        </header>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Resumen del proyecto</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Este proyecto se enfoca en el tratamiento de aguas industriales en el Bloque Sur de Andespetro, en la Amazonía ecuatoriana. El proyecto factura aproximadamente **$3,500 mensuales**. Para mantener la sostenibilidad, es crucial optimizar los costos de supervisión, que son significativamente elevados en un modelo presencial.</p>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto">El personal de campo está compuesto por 2 trabajadores que perciben un salario total de **$1,554 al mes**. En promedio, se realizan 2 tratamientos al mes, con un consumo específico de químicos. El siguiente informe detalla las dos opciones de supervisión y su impacto financiero proyectado a 3 años.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">El Veredicto Mensual: Dos Caminos Divergentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-8 border-gray-400">
+                    <h3 class="text-2xl font-semibold mb-2">Opción 1: Supervisión Presencial</h3>
+                    <p class="text-5xl font-bold text-gray-800 mb-2">-$2,024.50</p>
+                    <p class="text-gray-500">Pérdida Mensual Estimada</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-8 border-gray-400">
+                    <h3 class="text-2xl font-semibold mb-2">Opción 2: Supervisión Remota</h3>
+                    <p class="text-5xl font-bold text-gray-800 mb-2">+$840.50</p>
+                    <p class="text-gray-500">Ganancia Mensual Estimada</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">Análisis de Costos y Desglose Operativo</h3>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">La diferencia más significativa radica en los costos asociados al supervisor. A continuación, se detalla el desglose completo de los costos mensuales para cada modelo operativo.</p>
+
+            <h4 class="text-xl font-semibold text-center mt-8 mb-4">Detalle del Costo de Químicos por Tratamiento</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Costo Unitario (Kg)</th>
+                        <th>Cantidad por Tratamiento (Kg)</th>
+                        <th>Costo por Tratamiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Policloruro de Aluminio</td>
+                        <td>$1.00</td>
+                        <td>175 Kg</td>
+                        <td>$175.00</td>
+                    </tr>
+                    <tr>
+                        <td>Sulfato de Aluminio</td>
+                        <td>$0.68</td>
+                        <td>175 Kg</td>
+                        <td>$119.00</td>
+                    </tr>
+                    <tr>
+                        <td>Cal</td>
+                        <td>$0.45</td>
+                        <td>175 Kg</td>
+                        <td>$78.75</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3">Costo Total por Tratamiento</th>
+                        <th>$372.75</th>
+                    </tr>
+                    <tr>
+                        <th colspan="3">Costo Mensual de Químicos (2 tratamientos)</th>
+                        <th>$745.50</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mt-8 mb-2">Opción 1: Presencial</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Costo Mensual</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Salario de 2 Trabajadores</td><td>$1,554.00</td></tr>
+                            <tr><td>Costo Promedio de Químicos</td><td>$745.50</td></tr>
+                            <tr><td>Costo de Supervisión Presencial</td><td>$3,075.00</td></tr>
+                            <tr><td>Mantenimiento de Equipos</td><td>$150.00</td></tr>
+                            <tr><td>**Costo Operativo Total**</td><td>**$5,524.50**</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mt-8 mb-2">Opción 2: Remota</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Costo Mensual</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Salario de 2 Trabajadores</td><td>$1,554.00</td></tr>
+                            <tr><td>Incentivo de Jefe de Patio</td><td>$100.00</td></tr>
+                            <tr><td>Costo Promedio de Químicos</td><td>$745.50</td></tr>
+                            <tr><td>Costo de Supervisión Remota</td><td>$110.00</td></tr>
+                            <tr><td>Mantenimiento de Equipos</td><td>$150.00</td></tr>
+                            <tr><td>**Costo Operativo Total**</td><td>**$2,659.50**</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">Composición del Gasto: ¿A Dónde va el Dinero?</h3>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Estas gráficas circulares muestran la proporción de cada categoría de costo. Se puede observar que en la Opción 1, la supervisión es el componente dominante, mientras que en la Opción 2, los costos se distribuyen de manera más equilibrada y eficiente, permitiendo una mayor rentabilidad.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold mb-2">Opción 1: Presencial</h4>
+                    <div class="chart-container h-80 max-h-80">
+                        <canvas id="costComposition1"></canvas>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold mb-2">Opción 2: Remota</h4>
+                    <div class="chart-container h-80 max-h-80">
+                        <canvas id="costComposition2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">Proyección Financiera a 3 Años</h3>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Al proyectar los resultados a 3 años de contrato, la **Opción 1 acumula una pérdida de más de $72,000**, lo que hace que el proyecto sea insostenible. Por otro lado, la **Opción 2 genera una ganancia neta proyectada de más de $30,000**, demostrando su superioridad financiera.</p>
+            <div class="chart-container">
+                <canvas id="threeYearProjectionChart"></canvas>
+            </div>
+        </section>
+
+        <section class="mb-12">
+             <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Ventajas y Desventajas Clave</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold text-center mb-4">Opción 1: Supervisión Presencial</h4>
+                    <ul>
+                        <li class="flex items-start mb-3"><span class="text-green-500 mr-3 text-xl">✅</span> Máximo control sobre las operaciones.</li>
+                        <li class="flex items-start mb-3"><span class="text-green-500 mr-3 text-xl">✅</span> Resolución inmediata de problemas.</li>
+                        <li class="flex items-start mb-3"><span class="text-red-500 mr-3 text-xl">❌</span> Costo excesivo que anula la rentabilidad.</li>
+                        <li class="flex items-start mb-3"><span class="text-red-500 mr-3 text-xl">❌</span> Modelo financieramente insostenible.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold text-center mb-4">Opción 2: Supervisión Remota</h4>
+                    <ul>
+                        <li class="flex items-start mb-3"><span class="text-green-500 mr-3 text-xl">✅</span> Altamente rentable y sostenible.</li>
+                        <li class="flex items-start mb-3"><span class="text-green-500 mr-3 text-xl">✅</span> Empodera al personal y fomenta la responsabilidad.</li>
+                         <li class="flex items-start mb-3"><span class="text-red-500 mr-3 text-xl">❌</span> Dependencia de la disciplina y comunicación.</li>
+                        <li class="flex items-start mb-3"><span class="text-red-500 mr-3 text-xl">❌</span> La respuesta a problemas no críticos puede ser demorada.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center bg-white rounded-lg shadow-md p-8 border-t-8 border-gray-400">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Recomendación Final</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">La adopción de la <strong>Opción 2 (Supervisión Remota)</strong> no es solo una recomendación, es la única estrategia que garantiza la viabilidad y el éxito financiero del proyecto a largo plazo. Ofrece un control operativo robusto a una fracción del costo, asegurando un margen de ganancia saludable y sostenible.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Use `window.onload` to ensure the script runs after all HTML elements are loaded.
+        window.onload = function() {
+            const energeticAndPlayful = {
+                magenta: '#FF5733',
+                orange: '#FFC300',
+                green: '#28A745',
+                blue: '#007BFF',
+                purple: '#6F42C1',
+                text: '#231F20',
+                accent: '#C72F2F',
+                lightOrange: '#FFD700'
+            };
+    
+            const chartTooltipOptions = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+    
+            function wrapLabels(label) {
+                const maxLen = 16;
+                if (typeof label === 'string' && label.length > maxLen) {
+                    const words = label.split(' ');
+                    let lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                        if ((currentLine + word).length > maxLen) {
+                            lines.push(currentLine.trim());
+                            currentLine = '';
+                        }
+                        currentLine += word + ' ';
+                    });
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            }
+    
+            const monthlyCostsData = {
+                labels: ['Salarios', 'Químicos', 'Mantenimiento', 'Supervisión', 'Incentivo'],
+                datasets: [
+                    {
+                        label: 'Opción 1: Presencial',
+                        data: [1554, 745.50, 150, 3075, 0],
+                        backgroundColor: energeticAndPlayful.orange,
+                        borderColor: energeticAndPlayful.orange,
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Opción 2: Remota',
+                        data: [1554, 745.50, 150, 110, 100],
+                        backgroundColor: energeticAndPlayful.blue,
+                        borderColor: energeticAndPlayful.blue,
+                        borderWidth: 1
+                    }
+                ]
+            };
+    
+            new Chart(document.getElementById('monthlyCostsChart'), {
+                type: 'bar',
+                data: monthlyCostsData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) { return '$' + value; }
+                            }
+                        }
+                    },
+                    ...chartTooltipOptions
+                }
+            });
+            
+            const costComposition1Data = {
+                labels: ['Salarios', 'Químicos', 'Mantenimiento', 'Supervisión'],
+                datasets: [{
+                    data: [1554, 745.50, 150, 3075],
+                    backgroundColor: [energeticAndPlayful.green, energeticAndPlayful.blue, energeticAndPlayful.orange, energeticAndPlayful.magenta]
+                }]
+            };
+    
+            new Chart(document.getElementById('costComposition1'), {
+                type: 'doughnut',
+                data: costComposition1Data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    ...chartTooltipOptions
+                }
+            });
+    
+            const costComposition2Data = {
+                labels: ['Salarios', 'Químicos', 'Mantenimiento', 'Supervisión', 'Incentivo'],
+                datasets: [{
+                    data: [1554, 745.50, 150, 110, 100],
+                    backgroundColor: [energeticAndPlayful.green, energeticAndPlayful.blue, energeticAndPlayful.orange, energeticAndPlayful.magenta, energeticAndPlayful.purple]
+                }]
+            };
+    
+            new Chart(document.getElementById('costComposition2'), {
+                type: 'doughnut',
+                data: costComposition2Data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    ...chartTooltipOptions
+                }
+            });
+            
+            const threeYearProjectionData = {
+                labels: [
+                    wrapLabels('Ingresos Totales'),
+                    wrapLabels('Costos Totales'),
+                    wrapLabels('Resultado Neto')
+                ],
+                datasets: [
+                    {
+                        label: 'Opción 1: Presencial',
+                        data: [126000, 198882, -72882],
+                        backgroundColor: energeticAndPlayful.magenta,
+                    },
+                    {
+                        label: 'Opción 2: Remota',
+                        data: [126000, 95742, 30258],
+                        backgroundColor: energeticAndPlayful.green,
+                    }
+                ]
+            };
+    
+            new Chart(document.getElementById('threeYearProjectionChart'), {
+                type: 'bar',
+                data: threeYearProjectionData,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                               callback: function(value) { return '$' + value / 1000 + 'k'; }
+                            }
+                        }
+                    },
+                    ...chartTooltipOptions
+                }
+            });
+        };
+    </script>
+</body>
+</html>
